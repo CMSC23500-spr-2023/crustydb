@@ -468,14 +468,6 @@ mod tests {
         assert_eq!(None, p.get_value(1));
     }
 
-    #[test]
-    fn hs_page_get_first_free_space() {
-        init();
-        let mut p = Page::new(0);
-
-        let _b1 = get_random_byte_vec(100);
-        let _b2 = get_random_byte_vec(50);
-    }
 
     #[test]
     fn hs_page_delete_insert() {
