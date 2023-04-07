@@ -28,12 +28,3 @@ serde_cbor = "0.11.1"
 temp_testdir = "0.2.3"
 rand = "0.8"
 csv="=1.1.*"
-
-
-[dev-dependencies]
-criterion = "^0.3.5"
-
-[[bench]]
-name = "heap_bench"
-harness = false
-
