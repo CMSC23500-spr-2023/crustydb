@@ -1,5 +1,5 @@
 [package]
-name = "heapstore"
+name = "queryexe"
 version = "0.1.0"
 authors = [
     "Aaron Elmore <aelmore@cs.uchicago.edu>",
@@ -8,10 +8,6 @@ authors = [
     "William Ma <williamma@uchicago.edu>"]
 edition = "2021"
 
-[features]
-default = ["profile"]
-profile = []
-
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [lib]
@@ -19,21 +15,14 @@ doctest = false
 
 
 [dependencies]
+common = { path ="../common"}
+txn_manager = { path = "../txn_manager"}
+memstore = { path = "../memstore"}
+heapstore = { path = "../heapstore"}
+sqlparser="= 0.9.0"
 log = "0.4.11"
+csv="1.1"
 env_logger = "0.7.1"
-common = { path = "../common" }
-serde = { version = "1", features = ["derive"] }
-serde_json = "1.0"
+serde = { version = "1.0.89", features = ["derive"] }
 serde_cbor = "0.11.1"
-temp_testdir = "0.2.3"
-rand = "0.8"
-csv="=1.1.*"
-
-
-[dev-dependencies]
-criterion = "^0.3.5"
-
-[[bench]]
-name = "heap_bench"
-harness = false
 
